@@ -1,12 +1,13 @@
 import { Component, OnInit} from '@angular/core';
 import { POKEMONS } from './models/pokemons-list';
 import { Pokemon } from './models/pokemon';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

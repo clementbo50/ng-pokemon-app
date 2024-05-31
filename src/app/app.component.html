@@ -5,7 +5,15 @@
     (keyup.enter)="selectedPokemon(input.value)"
 />
 
-<p>Vous avez selectionne le pokemon : {{ pokemonSelected?.name }}</p>
+<p *ngIf="pokemonSelected">
+      Vous avez selectionne le pokemon : {{ pokemonSelected?.name }}
+</p>
+
+@if(pokemonSelected){
+    Vous avez selectionne le pokemon : {{ pokemonSelected?.name }}
+}
+
+
 <p>{{pokemonsList[0].name}}</p>
 <p>{{pokemonsList[1].name}}</p>
 <p>{{pokemonsList[2].name}}</p> 
