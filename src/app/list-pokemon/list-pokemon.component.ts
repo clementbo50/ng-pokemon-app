@@ -22,7 +22,7 @@ export class ListPokemonComponent implements OnInit {
   pokemonsList: Pokemon[] = POKEMONS;
   pokemonSelected!: Pokemon|undefined;
   ngOnInit() {
-    console.table(this.pokemonsList);
+    
     
   }
 

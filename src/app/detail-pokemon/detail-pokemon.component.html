@@ -1,1 +1,55 @@
-<p>detail-pokemon works!</p>
+@if(pokemon) {
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m13">
+          <div class="card">
+            <div class="card-content">
+              <h3 class="center-align">{{ pokemon.name }}</h3>
+              <table class="striped custom-background pokedex-table"> <!-- Ajout de la classe pokedex-table -->
+                <tbody>
+                  <tr>
+                    <td rowspan="5" class="hide-on-small-only"> <!-- Masquer sur les petits écrans -->
+                      <img [src]="pokemon.picture" alt="{{ pokemon.name }}" class="responsive-img">
+                    </td>
+                    <th>HP</th>
+                    <td>{{ pokemon.hp }}</td>
+                  </tr>
+                  <tr>
+                    <th>CP</th>
+                    <td>{{ pokemon.cp }}</td>
+                  </tr>
+                  <tr>
+                    <th>Types</th>
+                    <td>
+                      <ul>
+                        @for(type of pokemon.types; track type) {
+                          <li class="type {{type | pokemonTypeColor}}">{{type}}</li>
+                        }
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Created</th>
+                    <td>{{ pokemon.created | date:"dd/MM/yyyy" }}</td>
+                  </tr>
+                  <tr class="hide-on-med-and-up"> <!-- Masquer sur les écrans moyens et plus petits -->
+                    <td colspan="3">
+                      <img [src]="pokemon.picture" alt="{{ pokemon.name }}" class="responsive-img">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="card-action center-align">
+              <a routerLink="/" class="waves-effect waves-light btn">Retour</a> <!-- Utilisation d'Angular Router -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  } @else {
+    <div class="container">
+      <p class="center-align">Aucun pokemon n'a été trouvé.</p>
+    </div>
+  }
+  
