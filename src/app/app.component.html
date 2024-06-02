@@ -1,45 +1,4 @@
-﻿<div class="container">
-    <h1 class="center-align">🔴 Pokémons ⚪</h1>
-    
-    <div class="input-field">
-      <input 
-        #input
-        id="pokemon_id"
-        type="number"
-        class="validate"
-        (keyup.enter)="selectedPokemon(input.value)"
-        placeholder="N° du Pokémon"
-      />
-      
-    </div>
-  
-    @if(pokemonSelected) {
-      <div class="card-panel teal lighten-4">
-        <p class="center-align">Vous avez sélectionné le Pokémon : <strong>{{ pokemonSelected?.name }}</strong></p>
-      </div>
-    } @else {
-      <div class="card-panel red lighten-4">
-        <p class="center-align">Aucun Pokémon n'a été trouvé.</p>
-      </div>
-    }
-  
-    <div class="row" >
-      @for(pokemon of pokemonsList; track pokemon.id) {
-        <div class="col s12 m6 l3" >
-          <div class="card" pkmnBorderCard>
-            <div class="card-image" >
-              <img [src]="pokemon.picture" alt="{{pokemon.name}}">
-            </div>
-            <div class="card-content">
-              <span class="card-title">{{pokemon.name}}</span>
-              <p>Créé le : {{pokemon.created | date:"dd/MM/yyyy" }}</p>
-              @for(type of pokemon.types; track type) {
-                <h2 class="type {{type | pokemonTypeColor}}">{{type}}</h2>
-              }
-            </div>
-          </div>
-        </div>
-      }
-    </div>
-  </div>
+﻿<h1 class="center-align">🔴 Pokémons ⚪</h1>
+<router-outlet></router-outlet>
+
   
