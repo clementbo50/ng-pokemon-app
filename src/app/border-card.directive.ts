@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener } from '@angular/core';
+import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
 @Directive({
   selector: '[pkmnBorderCard]',
@@ -11,9 +11,11 @@ export class BorderCardDirective {
     this.setBorder('#f5f5f5');
   }
 
+  @Input('pkmnBorderCard') borderColor!: string;
+
   /* Evenements pour le hover sur les cartes */
   @HostListener('mouseenter') onMouseEnter() {
-    this.setBorder('#4286f4');
+    this.setBorder(this.borderColor || '#4286f4');
 
   }
 

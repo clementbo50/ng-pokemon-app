@@ -26,7 +26,7 @@
     <div class="row" >
       @for(pokemon of pokemonsList; track pokemon.id) {
         <div class="col s12 m6 l3" >
-          <div class="card" pkmnBorderCard>
+          <div class="card" pkmnBorderCard="blue">
             <div class="card-image" >
               <img [src]="pokemon.picture" alt="{{pokemon.name}}">
             </div>
