@@ -1,3 +1,4 @@
+import { BorderCardDirective } from './border-card.directive';
 import { Component, OnInit} from '@angular/core';
 import { POKEMONS } from './models/pokemons-list';
 import { Pokemon } from './models/pokemon';
@@ -7,7 +8,7 @@ import { Pokemon } from './models/pokemon';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [],
+  imports: [BorderCardDirective],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

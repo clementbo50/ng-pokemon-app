@@ -7,7 +7,7 @@ import { Directive, ElementRef, HostListener } from '@angular/core';
 export class BorderCardDirective {
 
   constructor(private el:ElementRef ) { 
-    this.setHeight(180);
+
     this.setBorder('#f5f5f5');
   }
 
