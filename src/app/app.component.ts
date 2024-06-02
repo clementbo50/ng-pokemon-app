@@ -1,14 +1,21 @@
-import { BorderCardDirective } from './border-card.directive';
+import { BorderCardDirective } from './directives/border-card.directive';
 import { Component, OnInit} from '@angular/core';
 import { POKEMONS } from './models/pokemons-list';
 import { Pokemon } from './models/pokemon';
+import { DatePipe, NgStyle } from '@angular/common';
+import { PokemonTypeColorPipe } from './pipes/pokemon-type-color.pipe';
 
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [BorderCardDirective],
+  imports: [
+    BorderCardDirective,
+    DatePipe,
+    PokemonTypeColorPipe,
+    NgStyle
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
