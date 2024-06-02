@@ -4,6 +4,7 @@ import { POKEMONS } from './../models/pokemons-list';
 import { Component, OnInit } from '@angular/core';
 import { DatePipe, NgStyle } from '@angular/common';
 import { PokemonTypeColorPipe } from '../pipes/pokemon-type-color.pipe';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -18,13 +19,16 @@ import { PokemonTypeColorPipe } from '../pipes/pokemon-type-color.pipe';
   templateUrl: './list-pokemon.component.html',
   styleUrl: './list-pokemon.component.scss'
 })
-export class ListPokemonComponent implements OnInit {
+export class ListPokemonComponent {
   pokemonsList: Pokemon[] = POKEMONS;
   pokemonSelected!: Pokemon|undefined;
-  ngOnInit() {
-    
-    
+
+  constructor(private router: Router)  {}
+
+  goToPokemon(pokemon: Pokemon) {
+    this.router.navigate(['/pokemons', pokemon.id]);
   }
+  
 
   selectedPokemon(pokemonId: string) {
 
