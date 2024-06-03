@@ -1,10 +1,12 @@
-import { BorderCardDirective } from './../directives/border-card.directive';
-import { Pokemon } from '../models/pokemon';
-import { POKEMONS } from './../models/pokemons-list';
+import { PokemonService } from './../pokemon.service';
 import { Component, OnInit } from '@angular/core';
 import { DatePipe, NgStyle } from '@angular/common';
-import { PokemonTypeColorPipe } from '../pipes/pokemon-type-color.pipe';
 import { Router } from '@angular/router';
+import { BorderCardDirective } from '../directives/border-card.directive';
+import { PokemonTypeColorPipe } from '../pipes/pokemon-type-color.pipe';
+import { Pokemon } from '../models/pokemon';
+
+
 
 
 @Component({
@@ -19,15 +21,23 @@ import { Router } from '@angular/router';
   templateUrl: './list-pokemon.component.html',
   styleUrl: './list-pokemon.component.scss'
 })
-export class ListPokemonComponent {
-  pokemonsList: Pokemon[] = POKEMONS;
+export class ListPokemonComponent implements OnInit {
+  pokemonsList!: Pokemon[];
   pokemonSelected!: Pokemon|undefined;
 
-  constructor(private router: Router)  {}
+  constructor(private router: Router, private pokemonService: PokemonService)  {
+    /*const PokemonServices = new PokemonService(); Interdit */
+  }
+
+  ngOnInit(): void {
+    this.pokemonsList = this.pokemonService.getPokemonList();
+  }
 
   goToPokemon(pokemon: Pokemon) {
     this.router.navigate(['/pokemons', pokemon.id]);
   }
+
+ 
   
 
   selectedPokemon(pokemonId: string) {

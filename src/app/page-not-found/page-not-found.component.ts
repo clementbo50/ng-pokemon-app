@@ -1,5 +1,4 @@
 import { RouterLink } from '@angular/router';
-import { Pokemon } from './../models/pokemon';
 import { Component } from '@angular/core';
 
 @Component({
