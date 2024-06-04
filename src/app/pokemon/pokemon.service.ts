@@ -16,6 +16,6 @@ export class PokemonService {
   }
 
   getPokemonsTypeList(): string[] {
-    return [...new Set(POKEMONS.map(pokemon => pokemon.types[0]))];
+   return['Grass', 'Fire', 'Water', 'Bug', 'Normal', 'Poison', 'Electric', 'Ground', 'Fairy', 'Fighting', 'Psychic', 'Rock', 'Ghost', 'Ice', 'Dragon'];
   }
 }
