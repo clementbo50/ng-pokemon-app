@@ -1,29 +1,5 @@
 <div class="container">
-    
-    
-    <div class="input-field">
-      <input 
-        #input
-        id="pokemon_id"
-        type="number"
-        class="validate"
-        (keyup.enter)="selectedPokemon(input.value)"
-        placeholder="N° du Pokémon"
-      />
-      
-    </div>
-  
-    @if(pokemonSelected) {
-      <div class="card-panel teal lighten-4">
-        <p class="center-align">Vous avez sélectionné le Pokémon : <strong>{{ pokemonSelected?.name }}</strong></p>
-      </div>
-    } @else {
-      <div class="card-panel red lighten-4">
-        <p class="center-align">Aucun Pokémon n'a été trouvé.</p>
-      </div>
-    }
-  
-    <div class="row" >
+     <div class="row" >
       @for(pokemon of pokemonsList; track pokemon.id) {
         <div class="col s12 m6 l3" >
           <div class="card" pkmnBorderCard (click)="goToPokemon(pokemon)">

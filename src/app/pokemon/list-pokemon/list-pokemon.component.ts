@@ -34,21 +34,11 @@ export class ListPokemonComponent implements OnInit {
   }
 
   goToPokemon(pokemon: Pokemon) {
-    this.router.navigate(['/pokemons', pokemon.id]);
+    this.router.navigate(['/pokemon', pokemon.id]);
   }
 
  
   
 
-  selectedPokemon(pokemonId: string) {
-
-    const pokemon: Pokemon|undefined = this.pokemonsList.find(pokemon => pokemon.id === +pokemonId);
-    if(pokemon) {
-      this.pokemonSelected = pokemon;
-      console.log(`vous avez selectionne le pokemon ${this.pokemonSelected?.name}`);
-    }else{
-      console.log('Vous avez selectionne un pokemon qui n\'existe pas');
-      this.pokemonSelected = pokemon;
-    }
-  }
+  
 }
