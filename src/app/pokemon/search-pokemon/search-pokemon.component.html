@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col s12 m6 offset-m3">
+        <div class="card">
+            <div class="card-content">
+                <div class="input-field">
+                    <input 
+                    #searchBox (keyup)="search(searchBox.value)" placeholder="Rechercher..." type="text">
+                </div>
+                <div class="collection">
+                    <!-- List of Pokemons -->
+                    <!-- The ngFor directive is used to loop through the list of pokemons$ (le $ pour la liste de pokemons sert a dire qu'elle est observable) -->
+                    <!-- The async pipe sert a simplifier le processus de subscription a un observable que l'on aurai du déclarer dans le ngOnInit()   -->
+                    <!-- The click event is used to navigate to the detail page of the pokemon -->
+                    <!-- The class is used to style the list of pokemons -->
+                    <a 
+                        *ngFor="let pokemon of pokemons$ | async"
+                        (click)="goToDetail(pokemon)"
+                        class="collection-item"
+                    >
+                        {{pokemon.name}} <!-- Display the name of the pokemon -->
+                    </a>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

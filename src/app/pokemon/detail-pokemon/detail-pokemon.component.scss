@@ -1,0 +1,32 @@
+.custom-background {
+    background-color: #fcdede; /* Couleur de fond personnalisée */
+  }
+
+  .pokedex-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .pokedex-table th, .pokedex-table td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: left;
+  }
+
+  .pokedex-table th {
+    background-color: #ccc;
+  }
+
+  .pokedex-table td {
+    text-align: center; /* Centrer le contenu des cellules */
+  }
+
+  .pokedex-table td img {
+    padding: 10px;
+    max-width: 100%; /* La largeur de l'image est égale à 100% de la largeur de la cellule */
+    height: auto; /* Garantit que l'image reste proportionnelle */
+    max-height: 180px; /* Taille maximale de l'image */
+    border-radius: 50%; /* Ajout de bord arrondi */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Ajout d'une ombre */
+    background-color: white;
+  }
