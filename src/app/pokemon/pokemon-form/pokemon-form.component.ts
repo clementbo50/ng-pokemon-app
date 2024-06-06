@@ -5,6 +5,7 @@ import { Pokemon } from '../models/pokemon';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { PokemonTypeColorPipe } from '../pipes/pokemon-type-color.pipe';
+import { LoaderComponent } from '../loader/loader.component';
 
 @Component({
   selector: 'app-pokemon-form',
@@ -13,6 +14,7 @@ import { PokemonTypeColorPipe } from '../pipes/pokemon-type-color.pipe';
     FormsModule,
     CommonModule,
     PokemonTypeColorPipe,
+    LoaderComponent
   ],
   templateUrl: './pokemon-form.component.html',
   styleUrl: './pokemon-form.component.scss'

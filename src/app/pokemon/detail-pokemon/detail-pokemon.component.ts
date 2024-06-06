@@ -4,6 +4,7 @@ import { DatePipe } from '@angular/common';
 import { PokemonTypeColorPipe } from '../pipes/pokemon-type-color.pipe';
 import { Pokemon } from './../models/pokemon';
 import { PokemonService } from '../pokemon.service';
+import { LoaderComponent } from '../loader/loader.component';
 
 
 
@@ -12,7 +13,8 @@ import { PokemonService } from '../pokemon.service';
   standalone: true,
   imports: [
     DatePipe,
-    PokemonTypeColorPipe
+    PokemonTypeColorPipe,
+    LoaderComponent
   ],
   templateUrl: './detail-pokemon.component.html',
   styleUrl: './detail-pokemon.component.scss'

@@ -27,6 +27,7 @@
                     required
                     [(ngModel)]="pokemon.picture" name="picture"
                     #picture="ngModel">
+                    
     
             <div [hidden]="picture.valid || picture.pristine"
                   class="card-panel red accent-1">
@@ -96,6 +97,6 @@
       </div>
     </div>
   </form>
-  <h3 *ngIf="!pokemon" class="center">
-   <h1>Aucun pokemons n'a été écris.</h1>
-  </h3>
+  <h4 *ngIf='!pokemon' class="center">
+    <app-loader></app-loader>
+  </h4>
