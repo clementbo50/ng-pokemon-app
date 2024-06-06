@@ -1,7 +1,7 @@
 import { PokemonService } from './../pokemon.service';
 import { Component, OnInit } from '@angular/core';
 import { DatePipe, NgStyle } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { BorderCardDirective } from '../directives/border-card.directive';
 import { PokemonTypeColorPipe } from '../pipes/pokemon-type-color.pipe';
 import { Pokemon } from '../models/pokemon';
@@ -16,7 +16,8 @@ import { Pokemon } from '../models/pokemon';
     BorderCardDirective,
     DatePipe,
     PokemonTypeColorPipe,
-    NgStyle
+    NgStyle,
+    RouterLink,
   ],
   templateUrl: './list-pokemon.component.html',
   styleUrl: './list-pokemon.component.scss'
