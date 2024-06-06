@@ -5,6 +5,7 @@ import { Router, RouterLink } from '@angular/router';
 import { BorderCardDirective } from '../directives/border-card.directive';
 import { PokemonTypeColorPipe } from '../pipes/pokemon-type-color.pipe';
 import { Pokemon } from '../models/pokemon';
+import { SearchPokemonComponent } from '../search-pokemon/search-pokemon.component';
 
 
 
@@ -18,6 +19,7 @@ import { Pokemon } from '../models/pokemon';
     PokemonTypeColorPipe,
     NgStyle,
     RouterLink,
+    SearchPokemonComponent
   ],
   templateUrl: './list-pokemon.component.html',
   styleUrl: './list-pokemon.component.scss'

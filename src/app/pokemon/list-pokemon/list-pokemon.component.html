@@ -1,5 +1,7 @@
 <div class="container">
      <div class="row" >
+
+      <app-search-pokemon></app-search-pokemon>
       @for(pokemon of pokemonsList; track pokemon.id) {
         <div class="col s12 m6 l3" >
           <div class="card" pkmnBorderCard (click)="goToPokemon(pokemon)">
